@@ -1,3 +1,4 @@
+// setting up the server
 const express = require('express');
 
 const app = express();
@@ -8,6 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
+// calling routes from route files
 require('./routes/apiRoutes')(app);
 require('./routes/htmlRoutes')(app);
 

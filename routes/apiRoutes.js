@@ -1,7 +1,7 @@
 const fs = require('fs')
 const uniqid = require('uniqid')
 
-
+// retrieving array info from .json, writing new info to array, and filtering info matching unique id's from array
 module.exports = (app) => {
     let noteJSON = require('../db/db.json')
     app.get('/api/notes', (req, res) => res.json(noteJSON));
@@ -25,5 +25,5 @@ module.exports = (app) => {
             if (err) throw err;
         });
         res.end();
-    })
+    });
 };
